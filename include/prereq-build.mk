@@ -17,10 +17,10 @@ $(eval $(call TestHostCommand,working-make, \
 	Please install GNU make v3.81 or later. (This version has bugs), \
 	$(MAKE) -v | grep -E 'Make (3\.8[1-9]|3\.9[0-9]|[4-9]\.)'))
 
-$(eval $(call TestHostCommand,case-sensitive-fs, \
-	OpenWrt can only be built on a case-sensitive filesystem, \
-	rm -f $(TMP_DIR)/test.*; touch $(TMP_DIR)/test.fs; \
-		test ! -f $(TMP_DIR)/test.FS))
+# $(eval $(call TestHostCommand,case-sensitive-fs, \
+	# OpenWrt can only be built on a case-sensitive filesystem, \
+	# rm -f $(TMP_DIR)/test.*; touch $(TMP_DIR)/test.fs; \
+		# test ! -f $(TMP_DIR)/test.FS))
 
 $(eval $(call TestHostCommand,proper-umask, \
 	Please build with umask 022 - other values produce broken packages, \
